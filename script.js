@@ -1,14 +1,27 @@
-let canvas = document.getElementById('canvas');
+let canvaso = document.getElementById('canvas');
 
-if(canvas.getContext) {
-    let ctx = canvas.getContext('2d'),
-        cWidth = canvas.width,
-        cHeight = canvas.height;
+if(canvaso.getContext) {
+    let ctxo = canvaso.getContext('2d');
 
-    ctx.strokeStyle = 'purple';
-    ctx.lineWidth = 3;
+    let cont = canvaso.parentNode;
 
-    // let prevX = 0, prevY = 0, currX = 300, currY = 150;
+    let cWidth = canvaso.width = cont.clientWidth,
+        cHeight = canvaso.height = cont.clientHeight;
+
+    let canvas = document.createElement('canvas');
+    canvas.setAttribute('id', 'canvasTemp');
+    canvas.width = cWidth;
+    canvas.height = cHeight;
+    canvas.style.position = 'absolute';
+    canvas.style.left = 0;
+    canvas.style.top = 0;
+
+    cont.appendChild(canvas);
+
+    let ctx = canvas.getContext('2d');
+
+    ctxo.strokeStyle = ctx.strokeStyle = 'red';
+    ctxo.lineWidth = ctx.lineWidth = 3;
 
     canvas.addEventListener('mousedown', lineStart);
     canvas.addEventListener('mousemove', lineMove);
@@ -49,10 +62,15 @@ if(canvas.getContext) {
 
     function lineStop(e) {
         if(dragging) {
-            lineMove(e);
+            // lineMove(e);
             
             dragging = false;
+
+            ctxo.drawImage(canvas, 0, 0);
+
+            ctx.clearRect(0, 0, cWidth, cHeight);
         }
+        
     }
     
     function getMousePosition(e) {
