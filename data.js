@@ -1,6 +1,64 @@
-const num_gen = 0;
-const num_load = 4;
-const tolerance = 0.001;
+const tolerance = 0.001; // user defined 
+const slack_bus = 2; // user defined : bus _id
+
+const buses = [
+    {
+        _id: 1,
+        type: 'generator',
+        P: 15.10,
+        Q: 10.00,
+        Voltage: '1.06 + j0.0',
+        V: 1.06,
+        delta: 0,
+        Qmin: 1.0,
+        Qmax: 12.0
+    },
+    {
+        _id: 2,
+        type: 'generator',
+        P: 15.10,
+        Q: 10.00,
+        Voltage: '1.06 + j0.0',
+        Qmin: 1.0,
+        Qmax: 12.0
+    },
+    {
+        _id: 1,
+        type: 'load',
+        P: 15.10,
+        Q: 10.00,
+        Voltage: '1.06 + j0.0',
+        Qmin: 1.0,
+        Qmax: 12.0
+    },
+    {
+        _id: 1,
+        type: 'voltage_controlled',
+        P: 15.10,
+        Q: 10.00,
+        Voltage: '1.06 + j0.0',
+        Qmin: 1.0,
+        Qmax: 12.0
+    },
+    {
+        _id: 1,
+        type: 'fixed_shunt_capacitor',
+        P: 15.10,
+        Q: 10.00,
+        Voltage: '1.06 + j0.0',
+        Qmin: 1.0,
+        Qmax: 12.0
+    },
+    {
+        _id: 1,
+        type: 'fixed_shunt_inductor',
+        P: 15.10,
+        Q: 10.00,
+        Voltage: '1.06 + j0.0',
+        Qmin: 1.0,
+        Qmax: 12.0
+    }
+];
 
 const lines = [
     {
@@ -81,6 +139,32 @@ const lines = [
     }
 ];
 
-let ybus = new LoadFlowAnalysis(num_gen, num_load, lines);
+const loadflow = new LoadFlowAnalysis(buses, lines, slack_bus, tolerance);
+const ybus = loadflow.yBus();
 
-document.write('<pre>' + ybus.yBus() + '</pre>');
+
+// printing of ybus
+document.write('<pre>');
+
+ybus.forEach((a,i) => {
+    document.write(i + ' => <br />');
+    a.forEach((b, j) => {
+        document.write('&nbsp;&nbsp;&nbsp;&nbsp;' + j + ' => ' + b + '<br />');
+    });
+});
+
+document.write('</pre>');
+
+// const test = ['satya', 'jyoti', 'biswas'];
+// test.forEach(t => {
+//     document.write(test.indexOf(t) + '=> ' + t + '<br />');
+// });
+
+const test = [];
+test[0] = 'satya';
+test[2] = 'biswas';
+console.log(typeof test[1]);
+
+test.forEach((t,i) => {
+    document.write(i + '=> ' + t + '<br />');
+});
