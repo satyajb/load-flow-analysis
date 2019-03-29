@@ -155,16 +155,14 @@ ybus.forEach((a,i) => {
 
 document.write('</pre>');
 
-// const test = ['satya', 'jyoti', 'biswas'];
-// test.forEach(t => {
-//     document.write(test.indexOf(t) + '=> ' + t + '<br />');
-// });
+const gaussSeidal = loadflow.gaussSeidal();
 
-const test = [];
-test[0] = 'satya';
-test[2] = 'biswas';
-console.log(typeof test[1]);
-
-test.forEach((t,i) => {
-    document.write(i + '=> ' + t + '<br />');
-});
+function newFunction() {
+    const test = [];
+    test[0] = 'satya';
+    test[2] = 'biswas';
+    console.log(typeof test[1]);
+    test.forEach((t, i) => {
+        document.write(i + '=> ' + t + '<br />');
+    });
+}
