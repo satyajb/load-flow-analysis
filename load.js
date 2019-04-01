@@ -7,84 +7,68 @@ function LoadFlowAnalysis(buses, lines, slack_bus, tolerance) {
     this.tolerance = tolerance;
     
     // formation of Ybus
-    this.yBus = function() {        
-        // initialize ybus matrix filled with zeros
-        let ybus = Array(this.buses.length).fill().map(() => Array(this.buses.length).fill(0));
-
-        // create ybus matrix
-        this.lines.forEach(line => {
-            let a = line.from_bus - 1, // bcz of array initialization at 0
-                b = line.to_bus - 1,
-                zpla = math.complex(line.resistance, line.reactance),
+    let generateYBus = function(lines, buses) {
+        let ybus = [];
+        lines.forEach(line => {
+            let a = math.min(line.from_bus, line.to_bus),
+                b = math.max(line.from_bus, line.to_bus),
+                zpla = math.complex(line.resistance, line.reactance).inverse(),
                 yspl = math.complex(line.conductance, line.susceptance);
+            
+            [a, b].forEach(i => {
+                [a, b].forEach(j => {
+                    if(i > j)
+                        return;
+                    
+                    let _yspl = yspl,
+                        _zpla = zpla;
+                    if(i !== j) {
+                        _yspl = 0;
+                        _zpla = zpla.neg();
+                    }
+                    // check existance
+                    let _ex = ybus.findIndex(y => y.row == i && y.column == j);
+                    if(_ex == -1) {
+                        _ex = ybus.length;
+                        ybus.push({});
+                    }
 
-            let _t1 = zpla.inverse();
-            if(typeof ybus[b][b] === 'undefined') {
-                ybus[b][b] = 0;
-            }
-            ybus[b][b] = math.add(ybus[b][b], _t1, yspl);
-            
-            // multiply zpla with onr
-            zpla = math.multiply(zpla, line.onr);
-            let _t2 = zpla.inverse();
-            ybus[a][b] = math.subtract(0, _t2);
-            
-            // multiply zpla with onr again
-            zpla = math.multiply(zpla, line.onr);
-            let _t3 = zpla.inverse();
-            if(typeof ybus[a][a] === 'undefined') {
-                ybus[a][a] = 0;
-            }
-            ybus[a][a] = math.add(ybus[a][a], _t3, yspl);
+                    ybus.splice(_ex, 1, {row: i, column: j, value: math.add(ybus[_ex].value || 0, _zpla, _yspl)});
+                });
+            });
         });
-
-        // create sparse admittance matrix
-        // let admittances = [];
-        // this.lines.forEach(line => {
-        //     let a = line.from_bus,
-        //         b = line.to_bus,
-        //         zpla = math.complex(line.resistance, line.reactance),
-        //         yspl = math.complex(line.conductance, line.susceptance);
-            
-        //     // calculate diagonal elements
-        //     admittances.forEach(admittance => {
-        //         if(typeof admittance == 'object') {
-        //             // check existance
-        //             if(admittance[0] == a || admittance[0] == b) {
-        //                 math.add
-        //             }
-        //         } else {
-        //             admittances.push(a, a, math.add(zpla, yspl));
-        //         }
-        //     })
-            
-        //     // calculate off-diagonal elements
-        //     if()
-        // });
 
         return ybus;
     };
     
+    this.getYBus = function () {
+        return generateYBus(this.lines, this.buses);
+    };
+
     this.gaussSeidal = function() {
+        // (Pp - jQp) / Vp* = Ip = (Sumof[q=1 to n, q!=p] Ypq.Yq) + Ypp. Vp
+        
+        const ybus = generateYBus(this.lines, this.buses);
         
         this.buses.forEach(bus => {
             // calculation of power constant
-            // for load buses and fixed_shunt_* buses
+            // for load buses and fixed_shunt_* buses only
             // (Pp - jQp)/Ypp
-                if(bus.type == 'load' || bus.type == 'fixed_shunt_capacitor' || bus.type == 'fixed_shunt_inductor') {
-                    let power = math.complex(bus.P, -bus.Q);
-                    console.log(power);
+            if(bus.type == 'load' || bus.type == 'fixed_shunt_capacitor' || bus.type == 'fixed_shunt_inductor') {
+                let power = math.complex(bus.P, bus.Q).conjugate();
+                console.log(power);
 
-                    let power_contant = math.divide(power / ybus[bus._id][bus._id]);
-                    math.did
-                }
+                let y = ybus.find(i => i.row == bus._id && i.column == bus._id);
+                let power_contant = math.divide(power, y.value);
+                console.log(power_contant);
+            }
 
             // calculation of admittance contant
             // for all buses except slack bus
             // Ypq / Ypp
-            // if(this.slack_bus == bus._id) {
-            //     continue;
-            // }
+            if(this.slack_bus == bus._id) {
+                return;
+            }
         
         })
     };

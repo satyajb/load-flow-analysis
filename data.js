@@ -1,3 +1,6 @@
+document.write('<pre>');
+
+
 const tolerance = 0.001; // user defined 
 const slack_bus = 2; // user defined : bus _id
 
@@ -23,7 +26,7 @@ const buses = [
         Qmax: 12.0
     },
     {
-        _id: 1,
+        _id: 3,
         type: 'load',
         P: 15.10,
         Q: 10.00,
@@ -32,7 +35,7 @@ const buses = [
         Qmax: 12.0
     },
     {
-        _id: 1,
+        _id: 4,
         type: 'voltage_controlled',
         P: 15.10,
         Q: 10.00,
@@ -41,17 +44,8 @@ const buses = [
         Qmax: 12.0
     },
     {
-        _id: 1,
+        _id: 5,
         type: 'fixed_shunt_capacitor',
-        P: 15.10,
-        Q: 10.00,
-        Voltage: '1.06 + j0.0',
-        Qmin: 1.0,
-        Qmax: 12.0
-    },
-    {
-        _id: 1,
-        type: 'fixed_shunt_inductor',
         P: 15.10,
         Q: 10.00,
         Voltage: '1.06 + j0.0',
@@ -140,22 +134,24 @@ const lines = [
 ];
 
 const loadflow = new LoadFlowAnalysis(buses, lines, slack_bus, tolerance);
-const ybus = loadflow.yBus();
+const ybus = loadflow.getYBus();
 
 
-// printing of ybus
-document.write('<pre>');
 
 ybus.forEach((a,i) => {
     document.write(i + ' => <br />');
-    a.forEach((b, j) => {
-        document.write('&nbsp;&nbsp;&nbsp;&nbsp;' + j + ' => ' + b + '<br />');
-    });
+    for(let k in a) {
+        document.write('&nbsp;&nbsp;&nbsp;&nbsp;' + k + ' => ' + a[k] + '<br />');
+    }
 });
 
-document.write('</pre>');
 
 const gaussSeidal = loadflow.gaussSeidal();
+
+
+
+
+
 
 function newFunction() {
     const test = [];
@@ -166,3 +162,5 @@ function newFunction() {
         document.write(i + '=> ' + t + '<br />');
     });
 }
+
+document.write('</pre>');
