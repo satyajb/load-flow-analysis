@@ -30,9 +30,7 @@ const buses = [
         type: 'load',
         P: 15.10,
         Q: 10.00,
-        Voltage: '1.06 + j0.0',
-        Qmin: 1.0,
-        Qmax: 12.0
+        Voltage: '1.06 + j0.0'
     },
     {
         _id: 4,
@@ -48,9 +46,7 @@ const buses = [
         type: 'fixed_shunt_capacitor',
         P: 15.10,
         Q: 10.00,
-        Voltage: '1.06 + j0.0',
-        Qmin: 1.0,
-        Qmax: 12.0
+        Voltage: '1.06 + j0.0'
     }
 ];
 
