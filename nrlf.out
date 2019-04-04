@@ -1,0 +1,604 @@
+
+
+
+5 Bus Input Data
+0 4 7 0.25
+
+1 1 2 0.02 0.06 0.0 0.030 1.0
+2 1 3 0.08 0.24 0.0 0.025 1.0
+3 2 3 0.06 0.18 0.0 0.020 1.0
+4 2 4 0.06 0.18 0.0 0.020 1.0
+5 2 5 0.04 0.12 0.0 0.015 1.0
+6 3 4 0.01 0.03 0.0 0.010 1.0
+7 4 5 0.08 0.24 0.0 0.025 1.0
+
+0
+
+1 1.06 0.0  0.0  0.0  0.0  0.0
+2 1.00 0.0 20.0 10.0 40.0 30.0
+3 1.00 0.0 45.0 15.0  0.0  0.0
+4 1.00 0.0 40.0  5.0  0.0  0.0
+5 1.00 0.0 60.0 10.0  0.0  0.0
+
+5 Bus Output Data
+[Ybus] =
+    ybus[1][1] = 6.25000 + i(18.69500)
+ybus[1][2] = -5.00000 + i(-15.00000)
+ybus[1][3] = -1.25000 + i(-3.75000)
+ybus[1][4] = 0.00000 + i(-0.00000)
+ybus[1][5] = 0.00000 + i(-0.00000)
+
+ybus[2][1] = -5.00000 + i(-15.00000)
+ybus[2][2] = 10.83333 + i(32.41500)
+ybus[2][3] = -1.66667 + i(-5.00000)
+ybus[2][4] = -1.66667 + i(-5.00000)
+ybus[2][5] = -2.50000 + i(-7.50000)
+
+ybus[3][1] = -1.25000 + i(-3.75000)
+ybus[3][2] = -1.66667 + i(-5.00000)
+ybus[3][3] = 12.91667 + i(38.69500)
+ybus[3][4] = -10.00000 + i(-30.00000)
+ybus[3][5] = 0.00000 + i(-0.00000)
+
+ybus[4][1] = 0.00000 + i(-0.00000)
+ybus[4][2] = -1.66667 + i(-5.00000)
+ybus[4][3] = -10.00000 + i(-30.00000)
+ybus[4][4] = 12.91667 + i(38.69500)
+ybus[4][5] = -1.25000 + i(-3.75000)
+
+ybus[5][1] = 0.00000 + i(-0.00000)
+ybus[5][2] = -2.50000 + i(-7.50000)
+ybus[5][3] = 0.00000 + i(-0.00000)
+ybus[5][4] = -1.25000 + i(-3.75000)
+ybus[5][5] = 3.75000 + i(11.21000)
+
+
+
+P(sch)[2] = 0.200000; Q(sch)[2] = 0.200000
+P(sch)[3] = -0.450000; Q(sch)[3] = -0.150000
+P(sch)[4] = -0.400000; Q(sch)[4] = -0.050000
+P(sch)[5] = -0.600000; Q(sch)[5] = -0.100000
+
+
+Initial P, delP, Q and delQ calculation
+P(cal)[2] = -0.300000;
+delP[2] = P(sch)[2] - P(cal)[2]= 0.500000
+Q(cal)[2] = -0.984999;
+delQ[2] = Q(sch)[2] - Q(cal)[2]=1.184999
+P(cal)[3] = -0.074999;
+delP[3] = P(sch)[3] - P(cal)[3]= -0.375001
+Q(cal)[3] = -0.280001;
+delQ[3] = Q(sch)[3] - Q(cal)[3]=0.130001
+P(cal)[4] = 0.000001;
+delP[4] = P(sch)[4] - P(cal)[4]= -0.400001
+Q(cal)[4] = -0.055000;
+delQ[4] = Q(sch)[4] - Q(cal)[4]=0.005000
+P(cal)[5] = 0.000000;
+delP[5] = P(sch)[5] - P(cal)[5]= -0.600000
+Q(cal)[5] = -0.040000;
+delQ[5] = Q(sch)[5] - Q(cal)[5]=-0.060000
+
+Initial delmax = 1.184999
+Jacobian matrix[1][1] H = 33.400002
+Jacobian matrix[1][5] N = 0.000000
+Jacobian matrix[5][1] M = 0.000000
+Jacobian matrix[5][5] L = 31.430002
+Jacobian matrix[1][2] H = -5.000000
+Jacobian matrix[1][6] N = 0.000000
+Jacobian matrix[5][2] M = 0.000000
+Jacobian matrix[5][6] L = -5.000000
+Jacobian matrix[1][3] H = -5.000000
+Jacobian matrix[1][7] N = 0.000000
+Jacobian matrix[5][3] M = 0.000000
+Jacobian matrix[5][7] L = -5.000000
+Jacobian matrix[1][4] H = -7.500000
+Jacobian matrix[1][8] N = 0.000000
+Jacobian matrix[5][4] M = 0.000000
+Jacobian matrix[5][8] L = -7.500000
+Jacobian matrix[2][1] H = -5.000000
+Jacobian matrix[2][5] N = 0.000000
+Jacobian matrix[6][1] M = 0.000000
+Jacobian matrix[6][5] L = -5.000000
+Jacobian matrix[2][2] H = 38.974998
+Jacobian matrix[2][6] N = 0.000000
+Jacobian matrix[6][2] M = 0.000000
+Jacobian matrix[6][6] L = 38.415001
+Jacobian matrix[2][3] H = -30.000000
+Jacobian matrix[2][7] N = 0.000000
+Jacobian matrix[6][3] M = 0.000000
+Jacobian matrix[6][7] L = -30.000000
+Jacobian matrix[2][4] H = 0.000000
+Jacobian matrix[2][8] N = 0.000000
+Jacobian matrix[6][4] M = 0.000000
+Jacobian matrix[6][8] L = 0.000000
+Jacobian matrix[3][1] H = -5.000000
+Jacobian matrix[3][5] N = 0.000000
+Jacobian matrix[7][1] M = 0.000000
+Jacobian matrix[7][5] L = -5.000000
+Jacobian matrix[3][2] H = -30.000000
+Jacobian matrix[3][6] N = 0.000000
+Jacobian matrix[7][2] M = 0.000000
+Jacobian matrix[7][6] L = -30.000000
+Jacobian matrix[3][3] H = 38.750000
+Jacobian matrix[3][7] N = 0.000000
+Jacobian matrix[7][3] M = 0.000000
+Jacobian matrix[7][7] L = 38.639999
+Jacobian matrix[3][4] H = -3.750000
+Jacobian matrix[3][8] N = 0.000000
+Jacobian matrix[7][4] M = 0.000000
+Jacobian matrix[7][8] L = -3.750000
+Jacobian matrix[4][1] H = -7.500000
+Jacobian matrix[4][5] N = 0.000000
+Jacobian matrix[8][1] M = 0.000000
+Jacobian matrix[8][5] L = -7.500000
+Jacobian matrix[4][2] H = 0.000000
+Jacobian matrix[4][6] N = 0.000000
+Jacobian matrix[8][2] M = 0.000000
+Jacobian matrix[8][6] L = 0.000000
+Jacobian matrix[4][3] H = -3.750000
+Jacobian matrix[4][7] N = 0.000000
+Jacobian matrix[8][3] M = 0.000000
+Jacobian matrix[8][7] L = -3.750000
+Jacobian matrix[4][4] H = 11.250000
+Jacobian matrix[4][8] N = 0.000000
+Jacobian matrix[8][4] M = 0.000000
+Jacobian matrix[8][8] L = 11.170000
+Iteration count = 1
+
+
+P, delP, Q and delQ calculation after 1 iteration
+P(cal)[2] = 0.902391;
+delP[2] = P(sch)[2] - P(cal)[2]= -0.702391
+Q(cal)[2] = 0.696292;
+delQ[2] = Q(sch)[2] - Q(cal)[2]=-0.496292
+P(cal)[3] = -0.423284;
+delP[3] = P(sch)[3] - P(cal)[3]= -0.026716
+Q(cal)[3] = 0.016344;
+delQ[3] = Q(sch)[3] - Q(cal)[3]=-0.166344
+P(cal)[4] = -0.364084;
+delP[4] = P(sch)[4] - P(cal)[4]= -0.035916
+Q(cal)[4] = 0.386137;
+delQ[4] = Q(sch)[4] - Q(cal)[4]=-0.436137
+P(cal)[5] = -0.909705;
+delP[5] = P(sch)[5] - P(cal)[5]= 0.309705
+Q(cal)[5] = -0.621991;
+delQ[5] = Q(sch)[5] - Q(cal)[5]=0.521991
+
+delmax after 1 operation = 0.702391
+Jacobian matrix[1][1] H = 36.775818
+Jacobian matrix[1][5] N = 0.000000
+Jacobian matrix[5][1] M = 0.000000
+Jacobian matrix[5][5] L = 38.168404
+Jacobian matrix[1][2] H = -5.816066
+Jacobian matrix[1][6] N = 0.000000
+Jacobian matrix[5][2] M = 0.000000
+Jacobian matrix[5][6] L = -5.816066
+Jacobian matrix[1][3] H = -5.835538
+Jacobian matrix[1][7] N = 0.000000
+Jacobian matrix[5][3] M = 0.000000
+Jacobian matrix[5][7] L = -5.835538
+Jacobian matrix[1][4] H = -8.235173
+Jacobian matrix[1][8] N = 0.000000
+Jacobian matrix[5][4] M = 0.000000
+Jacobian matrix[5][8] L = -8.235173
+Jacobian matrix[2][1] H = -5.632914
+Jacobian matrix[2][5] N = 0.000000
+Jacobian matrix[6][1] M = 0.000000
+Jacobian matrix[6][5] L = -5.632914
+Jacobian matrix[2][2] H = 43.960644
+Jacobian matrix[2][6] N = 0.000000
+Jacobian matrix[6][2] M = 0.000000
+Jacobian matrix[6][6] L = 43.993332
+Jacobian matrix[2][3] H = -34.220730
+Jacobian matrix[2][7] N = 0.000000
+Jacobian matrix[6][3] M = 0.000000
+Jacobian matrix[6][7] L = -34.220730
+Jacobian matrix[2][4] H = 0.000000
+Jacobian matrix[2][8] N = 0.000000
+Jacobian matrix[6][4] M = 0.000000
+Jacobian matrix[6][8] L = 0.000000
+Jacobian matrix[3][1] H = -5.627606
+Jacobian matrix[3][5] N = 0.000000
+Jacobian matrix[7][1] M = 0.000000
+Jacobian matrix[7][5] L = -5.627606
+Jacobian matrix[3][2] H = -34.074825
+Jacobian matrix[3][6] N = 0.000000
+Jacobian matrix[7][2] M = 0.000000
+Jacobian matrix[7][6] L = -34.074825
+Jacobian matrix[3][3] H = 43.728672
+Jacobian matrix[3][7] N = 0.000000
+Jacobian matrix[7][3] M = 0.000000
+Jacobian matrix[7][7] L = 44.500942
+Jacobian matrix[3][4] H = -4.026243
+Jacobian matrix[3][8] N = 0.000000
+Jacobian matrix[7][4] M = 0.000000
+Jacobian matrix[7][8] L = -4.026243
+Jacobian matrix[4][1] H = -7.851367
+Jacobian matrix[4][5] N = 0.000000
+Jacobian matrix[8][1] M = 0.000000
+Jacobian matrix[8][5] L = -7.851367
+Jacobian matrix[4][2] H = -0.000000
+Jacobian matrix[4][6] N = 0.000000
+Jacobian matrix[8][2] M = 0.000000
+Jacobian matrix[8][6] L = -0.000000
+Jacobian matrix[4][3] H = -3.980624
+Jacobian matrix[4][7] N = 0.000000
+Jacobian matrix[8][3] M = 0.000000
+Jacobian matrix[8][7] L = -3.980624
+Jacobian matrix[4][4] H = 11.831991
+Jacobian matrix[4][8] N = 0.000000
+Jacobian matrix[8][4] M = 0.000000
+Jacobian matrix[8][8] L = 10.588009
+Iteration count = 2
+
+
+P, delP, Q and delQ calculation after 2 iteration
+P(cal)[2] = 0.074616;
+delP[2] = P(sch)[2] - P(cal)[2]= 0.125384
+Q(cal)[2] = 0.601717;
+delQ[2] = Q(sch)[2] - Q(cal)[2]=-0.401717
+P(cal)[3] = -0.491234;
+delP[3] = P(sch)[3] - P(cal)[3]= 0.041234
+Q(cal)[3] = -0.131264;
+delQ[3] = Q(sch)[3] - Q(cal)[3]=-0.018736
+P(cal)[4] = -0.480247;
+delP[4] = P(sch)[4] - P(cal)[4]= 0.080247
+Q(cal)[4] = 0.053566;
+delQ[4] = Q(sch)[4] - Q(cal)[4]=-0.103566
+P(cal)[5] = -0.488291;
+delP[5] = P(sch)[5] - P(cal)[5]= -0.111709
+Q(cal)[5] = -0.431544;
+delQ[5] = Q(sch)[5] - Q(cal)[5]=0.331544
+
+delmax after 2 operation = 0.401717
+Jacobian matrix[1][1] H = 35.397068
+Jacobian matrix[1][5] N = 0.000000
+Jacobian matrix[5][1] M = 0.000000
+Jacobian matrix[5][5] L = 36.600506
+Jacobian matrix[1][2] H = -5.485062
+Jacobian matrix[1][6] N = 0.000000
+Jacobian matrix[5][2] M = 0.000000
+Jacobian matrix[5][6] L = -5.485062
+Jacobian matrix[1][3] H = -5.491487
+Jacobian matrix[1][7] N = 0.000000
+Jacobian matrix[5][3] M = 0.000000
+Jacobian matrix[5][7] L = -5.491487
+Jacobian matrix[1][4] H = -8.009057
+Jacobian matrix[1][8] N = 0.000000
+Jacobian matrix[5][4] M = 0.000000
+Jacobian matrix[5][8] L = -8.009057
+Jacobian matrix[2][1] H = -5.338618
+Jacobian matrix[2][5] N = 0.000000
+Jacobian matrix[6][1] M = 0.000000
+Jacobian matrix[6][5] L = -5.338618
+Jacobian matrix[2][2] H = 41.017563
+Jacobian matrix[2][6] N = 0.000000
+Jacobian matrix[6][2] M = 0.000000
+Jacobian matrix[6][6] L = 40.755035
+Jacobian matrix[2][3] H = -31.744797
+Jacobian matrix[2][7] N = 0.000000
+Jacobian matrix[6][3] M = 0.000000
+Jacobian matrix[6][7] L = -31.744797
+Jacobian matrix[2][4] H = 0.000000
+Jacobian matrix[2][8] N = 0.000000
+Jacobian matrix[6][4] M = 0.000000
+Jacobian matrix[6][8] L = 0.000000
+Jacobian matrix[3][1] H = -5.322720
+Jacobian matrix[3][5] N = 0.000000
+Jacobian matrix[7][1] M = 0.000000
+Jacobian matrix[7][5] L = -5.322720
+Jacobian matrix[3][2] H = -31.613508
+Jacobian matrix[3][6] N = 0.000000
+Jacobian matrix[7][2] M = 0.000000
+Jacobian matrix[7][6] L = -31.613508
+Jacobian matrix[3][3] H = 40.783379
+Jacobian matrix[3][7] N = 0.000000
+Jacobian matrix[7][3] M = 0.000000
+Jacobian matrix[7][7] L = 40.890511
+Jacobian matrix[3][4] H = -3.847153
+Jacobian matrix[3][8] N = 0.000000
+Jacobian matrix[7][4] M = 0.000000
+Jacobian matrix[7][8] L = -3.847153
+Jacobian matrix[4][1] H = -7.783978
+Jacobian matrix[4][5] N = 0.000000
+Jacobian matrix[8][1] M = 0.000000
+Jacobian matrix[8][5] L = -7.783978
+Jacobian matrix[4][2] H = -0.000000
+Jacobian matrix[4][6] N = 0.000000
+Jacobian matrix[8][2] M = 0.000000
+Jacobian matrix[8][6] L = -0.000000
+Jacobian matrix[4][3] H = -3.857567
+Jacobian matrix[4][7] N = 0.000000
+Jacobian matrix[8][3] M = 0.000000
+Jacobian matrix[8][7] L = -3.857567
+Jacobian matrix[4][4] H = 11.641544
+Jacobian matrix[4][8] N = 0.000000
+Jacobian matrix[8][4] M = 0.000000
+Jacobian matrix[8][8] L = 10.778456
+Iteration count = 3
+
+
+P, delP, Q and delQ calculation after 3 iteration
+P(cal)[2] = 0.123891;
+delP[2] = P(sch)[2] - P(cal)[2]= 0.076109
+Q(cal)[2] = 0.337087;
+delQ[2] = Q(sch)[2] - Q(cal)[2]=-0.137087
+P(cal)[3] = -0.453096;
+delP[3] = P(sch)[3] - P(cal)[3]= 0.003096
+Q(cal)[3] = -0.168295;
+delQ[3] = Q(sch)[3] - Q(cal)[3]=0.018295
+P(cal)[4] = -0.399309;
+delP[4] = P(sch)[4] - P(cal)[4]= -0.000691
+Q(cal)[4] = 0.009668;
+delQ[4] = Q(sch)[4] - Q(cal)[4]=-0.059668
+P(cal)[5] = -0.566900;
+delP[5] = P(sch)[5] - P(cal)[5]= -0.033100
+Q(cal)[5] = -0.303572;
+delQ[5] = Q(sch)[5] - Q(cal)[5]=0.203572
+
+delmax after 3 operation = 0.203572
+
+RESULTS:
+theta[2] = -2.915730
+theta[3] = -5.047156
+theta[4] = -5.379046
+theta[5] = -5.841759
+
+
+vbus[2] = 1.045402
+vbus[3] = 1.021123
+vbus[4] = 1.020565
+vbus[5] = 1.000000
+
+
+lineflow[1][2] = (93.005116) + i(-6.191287)
+lineflow[2][1] = (-91.464015) + i(4.165197)
+lineflow[1][3] = (41.384801) + i(2.315488)
+lineflow[3][1] = (-40.146665) + i(-4.016809)
+lineflow[2][3] = (24.204115) + i(4.257184)
+lineflow[3][2] = (-23.859690) + i(-7.495021)
+lineflow[2][4] = (27.419241) + i(3.646850)
+lineflow[4][2] = (-26.987806) + i(-6.621379)
+lineflow[2][5] = (52.229672) + i(21.639074)
+lineflow[5][2] = (-51.032883) + i(-21.188003)
+lineflow[3][4] = (18.696670) + i(-5.317970)
+lineflow[4][3] = (-18.661392) + i(3.339561)
+lineflow[4][5] = (5.718349) + i(4.248832)
+lineflow[5][4] = (-5.657165) + i(-9.169159)
+no of iterations = 3
+FINAL END
+
+
+/////////////////////////////////////////////////////
+
+6 Bus Input Data
+2 3 11 0.25
+
+1 1 2 0.10 0.20 0.0 0.020 1.0
+2 1 4 0.05 0.20 0.0 0.020 1.0
+3 1 5 0.08 0.30 0.0 0.030 1.0
+4 2 3 0.05 0.25 0.0 0.010 1.0
+5 2 4 0.05 0.10 0.0 0.010 1.0
+6 2 5 0.10 0.30 0.0 0.020 1.0
+7 2 6 0.07 0.20 0.0 0.025 1.0
+8 3 5 0.12 0.26 0.0 0.025 1.0
+9 3 6 0.02 0.10 0.0 0.010 1.0
+10 4 5 0.20 0.40 0.0 0.040 1.0
+11 5 6 0.10 0.30 0.0 0.030 1.0
+
+0
+
+1 2 80 70
+2 3 90 80
+
+1 1.05 0.0  0.0  0.0  0.0  0.0
+2 1.05 0.0  0.0  0.0 50.0  0.0
+3 1.07 0.0  0.0  0.0 60.0  0.0
+4 1.00 0.0 70.0 70.0  0.0  0.0
+5 1.00 0.0 70.0 70.0  0.0  0.0
+6 1.00 0.0 70.0 70.0  0.0  0.0
+
+6 Bus Output Data
+[Ybus] =
+    ybus[1][1] = 4.00635 + i(11.74792)
+ybus[1][2] = -2.00000 + i(-4.00000)
+ybus[1][3] = 0.00000 + i(-0.00000)
+ybus[1][4] = -1.17647 + i(-4.70588)
+ybus[1][5] = -0.82988 + i(-3.11203)
+ybus[1][6] = 0.00000 + i(-0.00000)
+
+ybus[2][1] = -2.00000 + i(-4.00000)
+ybus[2][2] = 9.32825 + i(23.21550)
+ybus[2][3] = -0.76923 + i(-3.84615)
+ybus[2][4] = -4.00000 + i(-8.00000)
+ybus[2][5] = -1.00000 + i(-3.00000)
+ybus[2][6] = -1.55902 + i(-4.45434)
+
+ybus[3][1] = 0.00000 + i(-0.00000)
+ybus[3][2] = -0.76923 + i(-3.84615)
+ybus[3][3] = 4.15572 + i(16.58727)
+ybus[3][4] = 0.00000 + i(-0.00000)
+ybus[3][5] = -1.46341 + i(-3.17073)
+ybus[3][6] = -1.92308 + i(-9.61538)
+
+ybus[4][1] = -1.17647 + i(-4.70588)
+ybus[4][2] = -4.00000 + i(-8.00000)
+ybus[4][3] = 0.00000 + i(-0.00000)
+ybus[4][4] = 6.17647 + i(14.63588)
+ybus[4][5] = -1.00000 + i(-2.00000)
+ybus[4][6] = 0.00000 + i(-0.00000)
+
+ybus[5][1] = -0.82988 + i(-3.11203)
+ybus[5][2] = -1.00000 + i(-3.00000)
+ybus[5][3] = -1.46341 + i(-3.17073)
+ybus[5][4] = -1.00000 + i(-2.00000)
+ybus[5][5] = 5.29329 + i(14.13776)
+ybus[5][6] = -1.00000 + i(-3.00000)
+
+ybus[6][1] = 0.00000 + i(-0.00000)
+ybus[6][2] = -1.55902 + i(-4.45434)
+ybus[6][3] = -1.92308 + i(-9.61538)
+ybus[6][4] = 0.00000 + i(-0.00000)
+ybus[6][5] = -1.00000 + i(-3.00000)
+ybus[6][6] = 4.48210 + i(17.00473)
+
+
+
+
+P(sch)[1] = 0.000000; Q(sch)[1] = 0.000000
+P(sch)[2] = 0.500000; Q(sch)[2] = 0.000000
+P(sch)[3] = 0.600000; Q(sch)[3] = 0.000000
+P(sch)[4] = -0.700000; Q(sch)[4] = -0.700000
+P(sch)[5] = -0.700000; Q(sch)[5] = -0.700000
+P(sch)[6] = -0.700000; Q(sch)[6] = -0.700000
+
+
+Initial P, delP, Q and delQ calculation
+P(cal)[2] = 0.328194;
+delP[2] = P(sch)[2] - P(cal)[2]= 0.171806
+P(cal)[3] = 0.270110;
+delP[3] = P(sch)[3] - P(cal)[3]= 0.329890
+P(cal)[4] = -0.258823;
+delP[4] = P(sch)[4] - P(cal)[4]= -0.441177
+Q(Cal)[4] = -0.705293;
+delQ[4] = Q(sch)[4] - Q(cal)[4]=0.005293
+P(cal)[5] = -0.193932;
+delP[5] = P(sch)[5] - P(cal)[5]= -0.506068
+Q(Cal)[5] = -0.672553;
+delQ[5] = Q(sch)[5] - Q(cal)[5]=-0.027447
+P(cal)[6] = -0.212566;
+delP[6] = P(sch)[6] - P(cal)[6]= -0.487434
+Q(Cal)[6] = -0.960794;
+delQ[6] = Q(sch)[6] - Q(cal)[6]=0.260794
+
+Initial delmax = 0.506068
+Jacobian Matrix[1][1] H = 24.958214
+Jacobian Matrix[1][2] H = -4.321154
+Jacobian Matrix[1][3] H = -8.400000
+Jacobian Matrix[1][4] H = -3.150000
+Jacobian Matrix[1][5] H = -4.677060
+Jacobian Matrix[2][1] H = -4.321154
+Jacobian Matrix[2][2] H = 18.002298
+Jacobian Matrix[2][3] H = 0.000000
+Jacobian Matrix[2][4] H = -3.392683
+Jacobian Matrix[2][5] H = -10.288462
+Jacobian Matrix[3][1] H = -8.400000
+Jacobian Matrix[3][2] H = 0.000000
+Jacobian Matrix[3][3] H = 15.341175
+Jacobian Matrix[3][4] H = -2.000000
+Jacobian Matrix[3][5] H = 0.000000
+Jacobian Matrix[4][1] H = -3.150000
+Jacobian Matrix[4][2] H = -3.392683
+Jacobian Matrix[4][3] H = -2.000000
+Jacobian Matrix[4][4] H = 14.810318
+Jacobian Matrix[4][5] H = -3.000000
+Jacobian Matrix[5][1] H = -4.677060
+Jacobian Matrix[5][2] H = -10.288462
+Jacobian Matrix[5][3] H = 0.000000
+Jacobian Matrix[5][4] H = -3.000000
+Jacobian Matrix[5][5] H = 17.965521
+Jacobian Matrix[1][6] N = 0.000000
+Jacobian Matrix[1][7] N = 0.000000
+Jacobian Matrix[1][8] N = 0.000000
+Jacobian Matrix[2][6] N = 0.000000
+Jacobian Matrix[2][7] N = 0.000000
+Jacobian Matrix[2][8] N = 0.000000
+Jacobian Matrix[3][6] N = 0.000000
+Jacobian Matrix[3][7] N = 0.000000
+Jacobian Matrix[3][8] N = 0.000000
+Jacobian Matrix[4][6] N = 0.000000
+Jacobian Matrix[4][7] N = 0.000000
+Jacobian Matrix[4][8] N = 0.000000
+Jacobian Matrix[5][6] N = 0.000000
+Jacobian Matrix[5][7] N = 0.000000
+Jacobian Matrix[5][8] N = 0.000000
+Jacobian Matrix[6][1] M = 0.000000
+Jacobian Matrix[6][2] M = 0.000000
+Jacobian Matrix[6][3] M = 0.000000
+Jacobian Matrix[6][4] M = 0.000000
+Jacobian Matrix[6][5] M = 0.000000
+Jacobian Matrix[7][1] M = 0.000000
+Jacobian Matrix[7][2] M = 0.000000
+Jacobian Matrix[7][3] M = 0.000000
+Jacobian Matrix[7][4] M = 0.000000
+Jacobian Matrix[7][5] M = 0.000000
+Jacobian Matrix[8][1] M = 0.000000
+Jacobian Matrix[8][2] M = 0.000000
+Jacobian Matrix[8][3] M = 0.000000
+Jacobian Matrix[8][4] M = 0.000000
+Jacobian Matrix[8][5] M = 0.000000
+Jacobian Matrix[6][6] L = 13.930590
+Jacobian Matrix[6][7] L = -2.000000
+Jacobian Matrix[6][8] L = 0.000000
+Jacobian Matrix[7][6] L = -2.000000
+Jacobian Matrix[7][7] L = 13.465212
+Jacobian Matrix[7][8] L = -3.000000
+Jacobian Matrix[8][6] L = 0.000000
+Jacobian Matrix[8][7] L = -3.000000
+Jacobian Matrix[8][8] L = 16.043932
+Iteration count = 1
+
+
+P, delP, Q and delQ calculation after 1 iteration
+P(cal)[2] = 0.477850;
+delP[2] = P(sch)[2] - P(cal)[2]= 0.022150
+Q(cal)[2] = 0.700000;
+delQ[2] = Q(sch)[2] - Q(cal)[2]=0.000000
+P(cal)[3] = 0.569395;
+delP[3] = P(sch)[3] - P(cal)[3]= 0.030605
+Q(cal)[3] = 0.800000;
+delQ[3] = Q(sch)[3] - Q(cal)[3]=0.000000
+P(cal)[4] = -0.693958;
+delP[4] = P(sch)[4] - P(cal)[4]= -0.006042
+Q(cal)[4] = -0.555989;
+delQ[4] = Q(sch)[4] - Q(cal)[4]=-0.144011
+P(cal)[5] = -0.703551;
+delP[5] = P(sch)[5] - P(cal)[5]= 0.003551
+Q(cal)[5] = -0.518043;
+delQ[5] = Q(sch)[5] - Q(cal)[5]=-0.181957
+P(cal)[6] = -0.635706;
+delP[6] = P(sch)[6] - P(cal)[6]= -0.064294
+Q(cal)[6] = -0.559226;
+delQ[6] = Q(sch)[6] - Q(cal)[6]=-0.140774
+
+delmax after 1 operation = 0.181957
+
+RESULTS:
+theta[2] = -3.445585
+theta[3] = -3.995055
+theta[4] = -4.227416
+theta[5] = -5.316532
+theta[6] = -5.627205
+
+
+vbus[2] = 1.050000
+vbus[3] = 1.070000
+vbus[4] = 1.000631
+vbus[5] = 1.001750
+vbus[6] = 1.016582
+
+
+lineflow[1][2] = (26.902934) + i(-14.659990)
+lineflow[2][1] = (-26.105750) + i(11.844358)
+lineflow[1][4] = (42.881859) + i(14.422373)
+lineflow[4][1] = (-41.922529) + i(-14.792576)
+lineflow[1][5] = (34.910078) + i(5.779010)
+lineflow[5][1] = (-33.965840) + i(-8.556125)
+lineflow[2][3] = (2.532540) + i(-9.988363)
+lineflow[3][2] = (-2.493823) + i(7.934551)
+lineflow[2][4] = (32.243119) + i(34.710918)
+lineflow[4][2] = (-31.189958) + i(-34.708358)
+lineflow[2][5] = (15.424573) + i(9.727920)
+lineflow[5][2] = (-15.079618) + i(-12.905063)
+lineflow[2][6] = (23.690511) + i(6.883181)
+lineflow[6][2] = (-23.275172) + i(-11.036347)
+lineflow[3][5] = (18.566617) + i(16.765749)
+lineflow[5][3] = (-17.801508) + i(-20.479020)
+lineflow[3][6] = (40.866656) + i(48.280022)
+lineflow[6][3] = (-40.148182) + i(-46.865989)
+lineflow[4][5] = (3.716734) + i(-6.097981)
+lineflow[5][4] = (-3.680391) + i(-1.848396)
+lineflow[5][6] = (0.172195) + i(-8.015714)
+lineflow[6][5] = (-0.147200) + i(1.979870)
+no of iterations = 1
+FINAL END

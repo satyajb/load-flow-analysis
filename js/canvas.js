@@ -1,8 +1,8 @@
-// first we need to create a stage
+// canvas container
 const stage = new Konva.Stage({
-    container: 'container',   // id of container <div>
-    width: 500,
-    height: 500
+    container: 'canvas',   // id of container <div>
+    width: document.getElementById('canvas-container').offsetWidth,
+    height: document.getElementById('canvas-container').offsetHeight
 });
   
 // then create layer
