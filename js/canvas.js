@@ -1,8 +1,12 @@
 // canvas container
+const contId = 'canvas-container';
+const cwidth = document.getElementById(contId).offsetWidth,
+    cheight = document.getElementById(contId).offsetHeight;
+
 const stage = new Konva.Stage({
-    container: 'canvas',   // id of container <div>
-    width: document.getElementById('canvas-container').offsetWidth,
-    height: document.getElementById('canvas-container').offsetHeight
+    container: contId,   // id of container <div>
+    width: cwidth,
+    height: cheight
 });
   
 // then create layer
@@ -13,9 +17,9 @@ const circle = new Konva.Circle({
     x: stage.width() / 2,
     y: stage.height() / 2,
     radius: 70,
-    fill: 'red',
-    stroke: 'black',
-    strokeWidth: 4
+    fill: 'magenta',
+    stroke: 'indianred',
+    strokeWidth: 40
 });
 
 // add the shape to the layer
