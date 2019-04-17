@@ -114,7 +114,7 @@ function LoadFlowAnalysis(buses, lines, slack_bus, tolerance) {
             let jacobian = [];
             // Elements of Jacobian Matrix
             this.buses.forEach((b, i) => {
-                if(b._id == slack_bus) {
+                if (b._id == slack_bus) {
                     return;
                 }
 
@@ -122,22 +122,22 @@ function LoadFlowAnalysis(buses, lines, slack_bus, tolerance) {
                 let _p = y.value.re * math.pow(b.volt, 2),
                     _q = y.value.im * math.pow(b.volt, 2);
                 jacobian.push(
-                    {row: i, column: i, value: _q - qcal[i]},
-                    {row: i, column: i, value: _p + pcal[i]},
-                    {row: i, column: i, value: -_p + pcal[i]},
-                    {row: i, column: i, value: _q + qcal[i]}
+                    { row: i, column: i, value: _q - qcal[i] },
+                    { row: i, column: i, value: _p + pcal[i] },
+                    { row: i, column: i, value: -_p + pcal[i] },
+                    { row: i, column: i, value: _q + qcal[i] }
                 );
 
                 this.buses.forEach((b1, j) => {
-                    if(b1._id == slack_bus) {
+                    if (b1._id == slack_bus) {
                         return;
                     }
                     if (i < j) {
                         jacobian.push(
-                            {row: i, column: j, value: vbus[i] * vbus[j] * (gbus[i][j] * sin(theta[i] - theta[j]) + bbus[i][j] * cos(theta[i] - theta[j]))},
-                            {row: i, column: j, value: vbus[i] * vbus[j] * (gbus[i][j] * cos(theta[i] - theta[j]) - bbus[i][j] * sin(theta[i] - theta[j]));},
-                            {row: i, column: j, value: -cn[i][j]},
-                            {row: i, column: j, value: ah[i][j]}
+                            { row: i, column: j, value: vbus[i] * vbus[j] * (gbus[i][j] * sin(theta[i] - theta[j]) + bbus[i][j] * cos(theta[i] - theta[j])) },
+                            { row: i, column: j, value: vbus[i] * vbus[j] * (gbus[i][j] * cos(theta[i] - theta[j]) - bbus[i][j] * sin(theta[i] - theta[j])); },
+                            { row: i, column: j, value: -cn[i][j] },
+                            { row: i, column: j, value: ah[i][j] }
                         );
                     }
                 }

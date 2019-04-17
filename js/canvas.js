@@ -9,24 +9,48 @@ const stage = new Konva.Stage({
     height: cheight
 });
   
-// then create layer
+// create layer
 const layer = new Konva.Layer();
 
-// create our shape
-const circle = new Konva.Circle({
-    x: stage.width() / 2,
-    y: stage.height() / 2,
-    radius: 70,
-    fill: 'magenta',
-    stroke: 'indianred',
-    strokeWidth: 40
+// add layer to the stage
+stage.add(layer);
+
+// create shape
+const line = new Konva.Line({
+    points: [0, 0],
+    stroke: 'red',
+    strokeWidth: 15,
+    lineCap: 'round',
+    lineJoin: 'round'
+  });
+
+
+let dragging = false, startPos, endPos;
+stage.on('mousedown', function() {
+    startPos = stage.getPointerPosition();
+    line.points([startPos.x, startPos.y]);
+    dragging = true;
+    layer.draw();
+});
+
+stage.on('mousemove', function() {
+    if(dragging) {
+        endPos = stage.getPointerPosition();
+        line.points([startPos.x, startPos.y, endPos.x, endPos.y]);
+        layer.draw();
+    }
+});
+
+stage.on('mouseup', function() {
+    endPos = stage.getPointerPosition();
+    line.points([startPos.x, startPos.y, endPos.x, endPos.y]);
+    layer.draw();
+    
+    dragging = false;
 });
 
 // add the shape to the layer
-layer.add(circle);
+layer.add(line);
 
-// add the layer to the stage
-stage.add(layer);
 
-// draw the image
-layer.draw();
+
