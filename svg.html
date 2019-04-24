@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <select name="tool" id="tool">
-        <option value="line">Pen</option>
+    <select name="tool" id="tool" onchange="changeMode(this)">
+        <option value="line">Line</option>
         <option value="rect">Rectangle</option>
         <option value="circle">Circle</option>
     </select>
