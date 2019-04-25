@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas Draw with Mouse</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <select name="tool" id="tool" onchange="changeMode(this)">
+        <option value="line">Bus</option>
+        <option value="path">Line</option>
+    </select>
+
+    <div id="container">
+        <svg id="my-svg" width="800" height="500" class="svg">
+            <polyline points="20,20,40,25,60,40,80,120,120,140,200,180" stroke="#3498db" stroke-width="4" stroke-linecap="round" fill="none" />
+        </svg>
+    </div>
+
+    <button id="my-btn">Click</button>
+    <script src="js/svg-ps.js"></script>
+</body>
+</html>
