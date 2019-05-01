@@ -9,15 +9,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <select name="tool" id="tool" onchange="changeMode(this)">
-        <option value="line">Bus</option>
-        <option value="path">Line</option>
+    <select name="tool" id="tool">
+        <option value="bus">Bus</option>
+        <option value="line">Line</option>
     </select>
 
     <div id="container">
-        <svg id="my-svg" width="800" height="500" class="svg">
-            <polyline points="20,20,40,25,60,40,80,120,120,140,200,180" stroke="#3498db" stroke-width="4" stroke-linecap="round" fill="none" />
-        </svg>
+        <svg id="my-svg" width="800" height="500" class="svg"></svg>
     </div>
 
     <button id="my-btn">Click</button>

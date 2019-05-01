@@ -1,0 +1,88 @@
+@font-face {
+	font-family: 'bpicons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/bpicons/bpicons.eot');
+	src: url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'), url('../fonts/bpicons/bpicons.woff') format('woff'), url('../fonts/bpicons/bpicons.ttf') format('truetype'), url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
+}
+
+
+/* Resets */
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+/* general */
+
+body {
+	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	overflow: hidden;
+	margin: 0;
+	color: #2d3436;
+	background: #eeeeee;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+	outline: none;
+}
+
+a:hover {
+	color: #ddd;
+}
+
+.container {
+	display: flex;
+	height: 100vh;
+}
+
+/* nav */
+.menu {
+	width: 50px;
+	background: #a29bfe;
+}
+.menu__level {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.menu__link {
+	font-weight: 600;
+	display: block;
+	text-align: center;
+	padding: 0.6em 0;
+	-webkit-transition: color 0.1s;
+	transition: color 0.1s;
+}
+
+.menu__link:hover,
+.menu__link:focus {
+	color: #6c5ce7;
+}
+
+.menu__link--current::before {
+	content: '\00B7';
+	font-size: 1.5em;
+	line-height: 0;
+	position: absolute;
+	top: 50%;
+	left: 0.5em;
+	height: 4px;
+	color: #6c5ce7;
+}
+
+/* main content */
+
+.content {
+	position: relative;
+	width: 100%;
+}
+
+.content--loading {
+	background: url(../img/loading.svg) no-repeat 50% 50%;
+}
