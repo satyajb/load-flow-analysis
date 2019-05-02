@@ -51,11 +51,16 @@ a:hover {
 	padding: 0;
 	list-style-type: none;
 }
+.menu__item {
+	position: relative;
+}
+
 .menu__link {
 	font-weight: 600;
 	display: block;
 	text-align: center;
 	padding: 0.6em 0;
+	cursor: pointer;
 	-webkit-transition: color 0.1s;
 	transition: color 0.1s;
 }
@@ -65,17 +70,23 @@ a:hover {
 	color: #6c5ce7;
 }
 
-.menu__link--current::before {
-	content: '\00B7';
-	font-size: 1.5em;
-	line-height: 0;
+.menu input[type="radio"] {
+	width: 1px !important;
+	height: 1px !important;
+	opacity: 0 !important;
+	-webkit-appearance: none;
 	position: absolute;
-	top: 50%;
-	left: 0.5em;
-	height: 4px;
-	color: #6c5ce7;
 }
 
+.menu__link svg {
+	width: 30px;
+	height: 30px;
+	fill: #c2c2c2;
+}
+
+.menu input[type="radio"]:checked + .menu__link svg {
+	fill: #fff;
+}
 /* main content */
 
 .content {

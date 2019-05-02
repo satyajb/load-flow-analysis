@@ -1,6 +1,6 @@
 const svg = document.getElementById('my-svg');
 // const svgns = 'http://www.w3.org/2000/svg';
-const tool = document.getElementById('tool');
+// const tool = document.getElementById('tool');
 
 // Events
 let started = false;
@@ -8,7 +8,8 @@ let line, bus;
 
 svg.addEventListener('click', (ev) => {
     let mp = getMousePosition(ev, svg),
-        mode = tool.options[tool.selectedIndex].value,
+        // mode = tool.options[tool.selectedIndex].value,
+        mode = (tool = document.querySelector('input[name="tool"]:checked')) ? tool.value : '',
         targetIsBus = ev.target.classList.contains('bus');
 
     if (mode == 'line') {
@@ -28,7 +29,7 @@ svg.addEventListener('click', (ev) => {
 
             // alert('line draw completed')
         } else {
-            throw new Error('Line should start or terminate on a bus. If no bus is available, draw one first.');
+            console.log('Error! Line should start or terminate on a bus. If no bus is available, draw one first.');
         }
     } else if (mode == 'bus') {
         if (!targetIsBus) {
@@ -43,10 +44,10 @@ svg.addEventListener('click', (ev) => {
             }
             started = !started;
         } else {
-            throw new Error('Buses should not start or terminate on another bus');
+            console.log('Error! Buses should not start or terminate on another bus');
         }
     } else {
-        throw new Error('No mode is selected');
+        console.log('Error! No mode is selected');
     }
 });
 
